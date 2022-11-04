@@ -62,5 +62,11 @@ module datapath (
 	// applicable names such as pcreg (PC register), adrmux 
 	// (Address Mux), etc. so that your code is easier to understand.
 
-	
+	flopenr #(32) pcreg(
+		.clk(clk),
+		.reset(reset),
+		.d(PCNext),
+		.q(PC)
+	);
+
 endmodule
