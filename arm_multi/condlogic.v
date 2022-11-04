@@ -31,14 +31,6 @@ module condlogic (
 	wire [3:0] Flags;
 	wire CondEx;
 
-	// Delay writing flags until ALUWB state
-	flopr #(2) flagwritereg(
-		clk,
-		reset,
-		FlagW & {2 {CondEx}},
-		FlagWrite
-	);
-
 	// ADD CODE HERE
 
 endmodule

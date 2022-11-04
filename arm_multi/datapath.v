@@ -62,5 +62,5 @@ module datapath (
 	// applicable names such as pcreg (PC register), adrmux 
 	// (Address Mux), etc. so that your code is easier to understand.
 
-	// ADD CODE HERE
+	
 endmodule
