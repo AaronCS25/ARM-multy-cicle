@@ -80,10 +80,11 @@ module datapath (
 		.d(ReadData),
 		.q(Instr)
 	);
-	flopenr #(32) rdreg2(
+	flopr #(32) rdreg2(
 		.clk(clk),
 		.reset(reset),
-		.d()
+		.d(ReadData),
+		.q(Data)
 	);
 	mux2 #(4) ra1(
 		.d0(Instr[19:16]),
