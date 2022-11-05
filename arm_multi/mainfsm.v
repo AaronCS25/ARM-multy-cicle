@@ -94,14 +94,14 @@ module mainfsm (
 		case (state)
 			FETCH: controls = 13'b1000101001100;
 			DECODE: controls = 13'b0000001001100;
-			EXECUTER: 
-			EXECUTEI: 
-			ALUWB: 
-			MEMADR: 
-			MEMWR: 
-			MEMRD: 
-			MEMWB: 
-			BRANCH: 
+			MEMADR: controls = 13'b0000001000010;
+			MEMREAD: controls = 13'b0000010000010;
+			MEMWB: controls = 13'b0001010100010;
+			MEMWRITE: controls = 13'b0010010000010;
+			EXECUTER: controls = 13'b0000001000001;
+			EXECUTEI: controls = 13'b0000001000011;
+			ALUWB: controls = 13'b00010000000x1;
+			BRANCH: controls = 13'b0100001010010;
 			default: controls = 13'bxxxxxxxxxxxxx;
 		endcase
 	assign {NextPC, Branch, MemW, RegW, IRWrite, AdrSrc, ResultSrc, ALUSrcA, ALUSrcB, ALUOp} = controls;
