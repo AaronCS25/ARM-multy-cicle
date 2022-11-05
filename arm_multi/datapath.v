@@ -86,16 +86,27 @@ module datapath (
 		.d(ReadData),
 		.q(Data)
 	);
-	mux2 #(4) ra1(
+	mux2 #(4) ra1mux(
 		.d0(Instr[19:16]),
 		.d1(2'b1110),
 		.s(RegSrc[0]),
 		.y(RA1)
 	);
-	mux2 #(4) ra2(
+	mux2 #(4) ra2mux(
 		.d0(Instr[3:0]),
 		.d1(Instr[15:12]),
 		.s(RegSrc[1]),
 		.y(RA2)
+	);
+	regfile rf(
+		.clk(clk),
+		.we3(RegWrite),
+		.ra1(RA1),
+		.ra2(RA2),
+		.wa3(Instr[15:12]),
+		.wd3(Result),
+		.r15(Result),
+		.rd1(RD1),
+		.rd2(RD2)
 	);
 endmodule
