@@ -53,6 +53,12 @@ module condlogic (
 		.Flags(Flags),
 		.CondEx(CondEx)
 	);
+	flopr #(2) condexreg(
+		.clk(clk),
+		.reset(reset),
+		.d(CondEx),
+		.q(CondExfp)
+	);
 	assign FlagWrite = FlagW & {2 {CondEx}};
 	assign RegWrite = RegW & CondEx;
 	assign MemWrite = MemW & CondEx;
