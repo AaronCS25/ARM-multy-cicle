@@ -32,11 +32,15 @@ module mainfsm (
 	reg [3:0] nextstate;
 	reg [12:0] controls;
 	localparam [3:0] FETCH = 0;
-	localparam [3:0] BRANCH = 9;
 	localparam [3:0] DECODE = 1;
-	localparam [3:0] EXECUTEI = 7;
-	localparam [3:0] EXECUTER = 6;
 	localparam [3:0] MEMADR = 2;
+	localparam [3:0] MEMREAD = 3;
+	localparam [3:0] MEMWB = 4;
+	localparam [3:0] MEMWRITE = 5;
+	localparam [3:0] EXECUTER = 6;
+	localparam [3:0] EXECUTEI = 7;
+	localparam [3:0] ALUWB = 8;
+	localparam [3:0] BRANCH = 9;	
 	localparam [3:0] UNKNOWN = 10;
 
 	// state register
@@ -66,9 +70,13 @@ module mainfsm (
 					2'b10: nextstate = BRANCH;
 					default: nextstate = UNKNOWN;
 				endcase
-			EXECUTER:
-			EXECUTEI:
+			EXECUTER: nextstate = ALUWB; // ?
+			EXECUTEI: nextstate = ALUWB; // ?
 			MEMADR:
+				case (Funct[0])
+					1'b0: nextstate = MEMREAD;
+					1'b1: nextstate = MEMWRITE // ?
+				endcase
 			MEMRD:
 			default: nextstate = FETCH;
 		endcase

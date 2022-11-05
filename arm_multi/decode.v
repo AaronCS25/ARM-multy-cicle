@@ -39,7 +39,7 @@ module decode (
 	wire Branch;
 	wire ALUOp;
 
-	// Main FSM
+	// *Main FSM
 	mainfsm fsm(
 		.clk(clk),
 		.reset(reset),

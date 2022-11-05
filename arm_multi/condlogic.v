@@ -53,7 +53,7 @@ module condlogic (
 		.Flags(Flags),
 		.CondEx(CondEx)
 	);
-	flopr #(2) condexreg(
+	flopr #(2) condexreg( // !1 o 2 bits.
 		.clk(clk),
 		.reset(reset),
 		.d(CondEx),
