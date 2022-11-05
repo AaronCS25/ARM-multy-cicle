@@ -126,4 +126,11 @@ module datapath (
 		.ImmSrc(ImmSrc),
 		.ExtImm(ExtImm)
 	);
+	mux3 rd1mux(
+		.d0(A),
+		.d1(PC),
+		.d2(ALUOut),
+		.s(ALUSrcA),
+		.y(SrcA)
+	);
 endmodule
