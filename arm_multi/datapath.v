@@ -80,4 +80,16 @@ module datapath (
 		.d(ReadData),
 		.q(Instr)
 	);
+	mux2 #(4) ra1(
+		.d0(Instr[19:16]),
+		.d1(2'b1110),
+		.s(RegSrc[0]),
+		.y(RA1)
+	);
+	mux2 #(4) ra2(
+		.d0(Instr[3:0]),
+		.d1(Instr[15:12]),
+		.s(RegSrc[1]),
+		.y(RA2)
+	)
 endmodule
