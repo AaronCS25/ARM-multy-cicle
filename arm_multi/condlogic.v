@@ -30,6 +30,8 @@ module condlogic (
 	wire [1:0] FlagWrite;
 	wire [3:0] Flags;
 	wire CondEx;
+	wire CondExfp;  // *Add a wire CondExfp.
+	wire PCSrc; 	// *Add a wire PCSrc.
 
 	// ADD CODE HERE
 	flopenr #(2) flagreg1(
@@ -54,5 +56,6 @@ module condlogic (
 	assign FlagWrite = FlagW & {2 {CondEx}};
 	assign RegWrite = RegW & CondEx;
 	assign MemWrite = MemW & CondEx;
-	assign PCSrc = PCS & CondEx;
+	assign PCSrc = PCS & CondExfp;   // * Modified command line.
+	assign PCWrite = PCSrc | NextPC; // *Add a command line. 
 endmodule
