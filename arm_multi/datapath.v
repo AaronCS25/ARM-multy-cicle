@@ -121,4 +121,9 @@ module datapath (
 		.d(RD2),
 		.q(WriteData)
 	);
+	extend ext(
+		.Instr(Instr[23:0]),
+		.ImmSrc(ImmSrc),
+		.ExtImm(ExtImm)
+	);
 endmodule
