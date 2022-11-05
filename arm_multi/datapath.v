@@ -69,4 +69,11 @@ module datapath (
 		.q(PC)
 	);
 
+	mux2 #(32) pcmux(
+		.d0(PC),
+		.d1(Result),
+		.s(AdrSrc),
+		.y(Adr)
+	)
+
 endmodule
