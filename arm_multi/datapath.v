@@ -74,11 +74,16 @@ module datapath (
 		.s(AdrSrc),
 		.y(Adr)
 	);
-	flopenr #(32) rdreg(
+	flopenr #(32) rdreg1(
 		.clk(clk),
 		.reset(reset),
 		.d(ReadData),
 		.q(Instr)
+	);
+	flopenr #(32) rdreg2(
+		.clk(clk),
+		.reset(reset),
+		.d()
 	);
 	mux2 #(4) ra1(
 		.d0(Instr[19:16]),
@@ -91,5 +96,5 @@ module datapath (
 		.d1(Instr[15:12]),
 		.s(RegSrc[1]),
 		.y(RA2)
-	)
+	);
 endmodule
