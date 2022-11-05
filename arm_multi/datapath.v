@@ -147,4 +147,10 @@ module datapath (
 		.Result(ALUResult),
 		.ALUFlags(ALUFlags)
 	);
+	flopr #(32) aluflopr(
+		.clk(clk),
+		.reset(reset),
+		.d(ALUResult),
+		.q(ALUOut)
+	)
 endmodule
