@@ -140,4 +140,11 @@ module datapath (
 		.s(ALUSrcB),
 		.y(SrcB)
 	);
+	alu alu(
+		.a(SrcA),
+		.b(SrcB),
+		.ALUControl(ALUControl),
+		.Result(ALUResult),
+		.ALUFlags(ALUFlags)
+	);
 endmodule
