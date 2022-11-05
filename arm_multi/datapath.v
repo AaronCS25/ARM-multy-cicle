@@ -133,4 +133,11 @@ module datapath (
 		.s(ALUSrcA),
 		.y(SrcA)
 	);
+	mux3 rd2mux(
+		.d0(WriteData),
+		.d1(ExtImm),
+		.d2(2'b0000000000000000000000000000100),
+		.s(ALUSrcB),
+		.y(SrcB)
+	);
 endmodule
