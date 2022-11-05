@@ -109,4 +109,16 @@ module datapath (
 		.rd1(RD1),
 		.rd2(RD2)
 	);
+	flopr #(32) rd1reg(
+		.clk(clk),
+		.reset(reset),
+		.d(RD1),
+		.q(A)
+	);
+	flopr #(32) rd2reg(
+		.clk(clk),
+		.reset(reset),
+		.d(RD2),
+		.q(WriteData)
+	);
 endmodule
