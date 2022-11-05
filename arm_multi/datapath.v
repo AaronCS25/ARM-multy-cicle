@@ -152,5 +152,12 @@ module datapath (
 		.reset(reset),
 		.d(ALUResult),
 		.q(ALUOut)
-	)
+	);
+	mux3 alumux(
+		.d0(ALUOut),
+		.d1(Data),
+		.d2(ALUResult),
+		.s(ResultSrc),
+		.y(Result)
+	);
 endmodule
