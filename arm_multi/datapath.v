@@ -68,12 +68,16 @@ module datapath (
 		.d(PCNext),
 		.q(PC)
 	);
-
 	mux2 #(32) pcmux(
 		.d0(PC),
 		.d1(Result),
 		.s(AdrSrc),
 		.y(Adr)
-	)
-
+	);
+	flopenr #(32) rdreg(
+		.clk(clk),
+		.reset(reset),
+		.d(ReadData),
+		.q(Instr)
+	);
 endmodule
