@@ -100,7 +100,7 @@ module mainfsm (
 			MEMWRITE: controls = 13'b0010010000010;
 			EXECUTER: controls = 13'b0000001000001;
 			EXECUTEI: controls = 13'b0000001000011;
-			ALUWB: controls = 13'b00010000000x1;
+			ALUWB: controls = 13'b00010000000x1; // !warning
 			BRANCH: controls = 13'b0100001010010;
 			default: controls = 13'bxxxxxxxxxxxxx;
 		endcase

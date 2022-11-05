@@ -1,3 +1,11 @@
+`include "flopenr.v"
+`include "flopr.v"
+`include "mux3.v"
+`include "mux2.v"
+`include "regfile.v"
+`include "extend.v"
+`include "alu.v"
+
 // ADD CODE BELOW
 // Complete the datapath module below for Lab 11.
 // You do not need to complete this module for Lab 10.

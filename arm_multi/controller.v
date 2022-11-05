@@ -1,3 +1,6 @@
+`include "decode.v"
+`include "condlogic.v"
+
 module controller (
 	clk,
 	reset,
