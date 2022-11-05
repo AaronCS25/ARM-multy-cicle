@@ -87,4 +87,6 @@ module decode (
 
 	// *Instr Decoder
 	assign ImmSrc = Op;
+	assign RegSrc[0] = (Op == 2'b10);
+	assign RegSrc[1] = (Op == 2'b01 & Funct[0] == 1'b0);
 endmodule
