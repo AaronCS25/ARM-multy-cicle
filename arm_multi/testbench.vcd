@@ -1,0 +1,250 @@
+$date
+	Sat Nov 05 23:50:26 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module controller_tb $end
+$var wire 2 ! ResultSrc [1:0] $end
+$var wire 1 " RegWrite $end
+$var wire 2 # RegSrc [1:0] $end
+$var wire 1 $ PCWrite $end
+$var wire 1 % MemWrite $end
+$var wire 2 & ImmSrc [1:0] $end
+$var wire 1 ' IRWrite $end
+$var wire 1 ( AdrSrc $end
+$var wire 2 ) ALUSrcB [1:0] $end
+$var wire 2 * ALUSrcA [1:0] $end
+$var wire 2 + ALUControl [1:0] $end
+$var reg 4 , ALUFlags [3:0] $end
+$var reg 20 - Instr [31:12] $end
+$var reg 1 . clk $end
+$var reg 32 / i [31:0] $end
+$var reg 1 0 reset $end
+$scope module control_unit $end
+$var wire 4 1 ALUFlags [3:0] $end
+$var wire 20 2 Instr [31:12] $end
+$var wire 1 . clk $end
+$var wire 1 0 reset $end
+$var wire 2 3 ResultSrc [1:0] $end
+$var wire 1 " RegWrite $end
+$var wire 1 4 RegW $end
+$var wire 2 5 RegSrc [1:0] $end
+$var wire 1 $ PCWrite $end
+$var wire 1 6 PCS $end
+$var wire 1 7 NextPC $end
+$var wire 1 % MemWrite $end
+$var wire 1 8 MemW $end
+$var wire 2 9 ImmSrc [1:0] $end
+$var wire 1 ' IRWrite $end
+$var wire 2 : FlagW [1:0] $end
+$var wire 1 ( AdrSrc $end
+$var wire 2 ; ALUSrcB [1:0] $end
+$var wire 2 < ALUSrcA [1:0] $end
+$var wire 2 = ALUControl [1:0] $end
+$scope module cl $end
+$var wire 4 > ALUFlags [3:0] $end
+$var wire 4 ? Cond [3:0] $end
+$var wire 2 @ FlagWrite [1:0] $end
+$var wire 1 % MemWrite $end
+$var wire 1 A PCSrc $end
+$var wire 1 $ PCWrite $end
+$var wire 1 " RegWrite $end
+$var wire 1 . clk $end
+$var wire 1 0 reset $end
+$var wire 1 4 RegW $end
+$var wire 1 6 PCS $end
+$var wire 1 7 NextPC $end
+$var wire 1 8 MemW $end
+$var wire 4 B Flags [3:0] $end
+$var wire 2 C FlagW [1:0] $end
+$var wire 1 D CondExfp $end
+$var wire 1 E CondEx $end
+$scope module cc $end
+$var wire 4 F Cond [3:0] $end
+$var wire 4 G Flags [3:0] $end
+$var wire 1 H ge $end
+$var wire 1 I zero $end
+$var wire 1 J overflow $end
+$var wire 1 K neg $end
+$var wire 1 L carry $end
+$var reg 1 E CondEx $end
+$upscope $end
+$scope module condexreg $end
+$var wire 1 . clk $end
+$var wire 2 M d [1:0] $end
+$var wire 1 0 reset $end
+$var parameter 32 N WIDTH $end
+$var reg 2 O q [1:0] $end
+$upscope $end
+$scope module flagreg0 $end
+$var wire 1 . clk $end
+$var wire 2 P d [1:0] $end
+$var wire 1 Q en $end
+$var wire 1 0 reset $end
+$var parameter 32 R WIDTH $end
+$var reg 2 S q [1:0] $end
+$upscope $end
+$scope module flagreg1 $end
+$var wire 1 . clk $end
+$var wire 2 T d [1:0] $end
+$var wire 1 U en $end
+$var wire 1 0 reset $end
+$var parameter 32 V WIDTH $end
+$var reg 2 W q [1:0] $end
+$upscope $end
+$upscope $end
+$scope module dec $end
+$var wire 6 X Funct [5:0] $end
+$var wire 2 Y ImmSrc [1:0] $end
+$var wire 2 Z Op [1:0] $end
+$var wire 1 6 PCS $end
+$var wire 4 [ Rd [3:0] $end
+$var wire 1 . clk $end
+$var wire 1 0 reset $end
+$var wire 2 \ ResultSrc [1:0] $end
+$var wire 1 4 RegW $end
+$var wire 2 ] RegSrc [1:0] $end
+$var wire 1 7 NextPC $end
+$var wire 1 8 MemW $end
+$var wire 1 ' IRWrite $end
+$var wire 1 ^ Branch $end
+$var wire 1 ( AdrSrc $end
+$var wire 2 _ ALUSrcB [1:0] $end
+$var wire 2 ` ALUSrcA [1:0] $end
+$var wire 1 a ALUOp $end
+$var reg 2 b ALUControl [1:0] $end
+$var reg 2 c FlagW [1:0] $end
+$scope module fsm $end
+$var wire 6 d Funct [5:0] $end
+$var wire 2 e Op [1:0] $end
+$var wire 1 . clk $end
+$var wire 1 0 reset $end
+$var wire 2 f ResultSrc [1:0] $end
+$var wire 1 4 RegW $end
+$var wire 1 7 NextPC $end
+$var wire 1 8 MemW $end
+$var wire 1 ' IRWrite $end
+$var wire 1 ^ Branch $end
+$var wire 1 ( AdrSrc $end
+$var wire 2 g ALUSrcB [1:0] $end
+$var wire 2 h ALUSrcA [1:0] $end
+$var wire 1 a ALUOp $end
+$var parameter 4 i ALUWB $end
+$var parameter 4 j BRANCH $end
+$var parameter 4 k DECODE $end
+$var parameter 4 l EXECUTEI $end
+$var parameter 4 m EXECUTER $end
+$var parameter 4 n FETCH $end
+$var parameter 4 o MEMADR $end
+$var parameter 4 p MEMREAD $end
+$var parameter 4 q MEMWB $end
+$var parameter 4 r MEMWRITE $end
+$var parameter 4 s UNKNOWN $end
+$var reg 13 t controls [12:0] $end
+$var reg 4 u nextstate [3:0] $end
+$var reg 4 v state [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 s
+b101 r
+b100 q
+b11 p
+b10 o
+b0 n
+b110 m
+b111 l
+b1 k
+b1001 j
+b1000 i
+b10 V
+b10 R
+b10 N
+$end
+#0
+$dumpvars
+b0 v
+b1 u
+b1000101001100 t
+b1 h
+b10 g
+b10 f
+bx e
+bx d
+b0 c
+b0 b
+0a
+b1 `
+b10 _
+0^
+bx ]
+b10 \
+bx [
+bx Z
+bx Y
+bx X
+b0 W
+0U
+b1 T
+b0 S
+0Q
+b0 P
+b0 O
+b0x M
+0L
+0K
+0J
+0I
+1H
+b0 G
+bx F
+xE
+0D
+b0 C
+b0 B
+0A
+b0 @
+bx ?
+b100 >
+b0 =
+b1 <
+b10 ;
+b0 :
+bx 9
+08
+17
+06
+bx 5
+04
+b10 3
+bx 2
+b100 1
+10
+b0 /
+0.
+bx -
+b100 ,
+b0 +
+b1 *
+b10 )
+0(
+1'
+bx &
+0%
+1$
+bx #
+0"
+b10 !
+$end
+#1
+1.
+#2
+00
